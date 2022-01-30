@@ -1,0 +1,1 @@
+web: gunicorn Dia_eaties_2.wsgi
