@@ -1,1 +1,1 @@
-web: gunicorn Dia_eaties_2.wsgi.py
+web: gunicorn dia_eaties_2.wsgi.py
