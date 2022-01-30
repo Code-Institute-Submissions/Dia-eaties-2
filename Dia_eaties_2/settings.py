@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'dia_eaties_2.urls'
+ROOT_URLCONF = 'Dia_eaties_2.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dia_eaties_2.wsgi.application'
+WSGI_APPLICATION = 'Dia_eaties_2.wsgi.application'
 
 
 # Database
