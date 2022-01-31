@@ -13,11 +13,11 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in recipe.featured_image.url %}
+                                {% if "placeholder" in recipe.recipe_image.url %}
                                 <img class="card-img-top"
-                                    src="media/test.jpg">
+                                    src="https://res.cloudinary.com/diabekki/image/upload/v1635610273/pexels-pavel-danilyuk-7653347_1_dzj4ii.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
+                                <img class="card-img-top" src=" {{ recipe.recipe_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ recipe.creator }}</p>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
                 {% endif %}
