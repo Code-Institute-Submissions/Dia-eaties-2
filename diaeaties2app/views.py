@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Recipe
+from .forms import CommentForm
 
 class RecipeList(generic.ListView):
     model = Recipe
@@ -24,6 +25,7 @@ class RecipeDetail(View):
             {
                 "recipe": recipe,
                 "comments": comments,
-                "loved": loved
+                "loved": loved,
+                "comment_form": CommentForm()
             },
         )
