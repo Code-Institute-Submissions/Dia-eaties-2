@@ -63,8 +63,8 @@ class RecipeDetail(View):
             },
         )
 
+
 class LovedRecipe(View):
-    
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.loves.filter(id=request.user.id).exists():
@@ -73,3 +73,5 @@ class LovedRecipe(View):
             recipe.loves.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
