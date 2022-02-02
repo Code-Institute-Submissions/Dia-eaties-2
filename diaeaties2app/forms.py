@@ -19,7 +19,7 @@ class RecipeForm(forms.ModelForm):
 
     class Meta:
         model = Recipe
-        exclude = ('slug', 'updated_on', 'shared_on', 'likes',)
+        exclude = ('slug', 'updated_on', 'shared_on', 'loves',)
         widgets = {
             'content': SummernoteWidget(),
         }

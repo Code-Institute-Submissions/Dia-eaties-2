@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -23,7 +23,7 @@ class RecipeDetail(View):
         loved = False
         if recipe.loves.filter(id=self.request.user.id).exists():
             loved = True
-        
+    
         return render (
             request,
             "recipe_detail.html",
@@ -79,7 +79,7 @@ class LovedRecipe(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-"""Display the contact form"""
+"""Displays the contact form"""
 def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
@@ -105,3 +105,13 @@ class CreateRecipe(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+
+
+class UpdateRecipe(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = 'update_recipe.html'
+    success_message = "You have successfully updated your recipe!"
+
+    def get_success_url(self):
+        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
