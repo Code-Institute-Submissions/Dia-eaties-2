@@ -31,6 +31,8 @@
                             <p class="card-text text-muted h6">{{ recipe.created}} <i class="far fa-heart"></i>
                                 {{ recipe.number_of_loves }}</p>
                                 <a href="{% url 'update' recipe.slug %}" role="button" class="edit-delete edit">Update Recipe <i class="fas fa-edit"></i></a>
+                                <a href="{% url 'delete' recipe.slug %}" role="button" class="text-danger">Delete Recipe <i
+                                    class="fas fa-trash-alt"></i></a>
                         </div>
                     </div>
                 </div>

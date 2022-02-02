@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="overlay"></div>
+<div class="container container-override">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form method="post" >{% csrf_token %}
+                <h1>Delete Post?</h1>
+                <br><br>
+                <h3>Are you sure you want to delete the following recipe:"<span style="font-weight: 900;">{{ object }}</span>"?</h3>
+                <br><br>
+                 
+                    <input type="submit" value="Confirm" class="btn btn-signup">
+                    <input type=button value="Cancel"  class="btn btn-signup" onClick="javascript:history.go(-1);">
+                </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
