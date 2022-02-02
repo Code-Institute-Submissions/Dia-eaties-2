@@ -26,7 +26,7 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = (
-        'contact_email',
+        'email',
         'subject',
         'message',
         'sent',

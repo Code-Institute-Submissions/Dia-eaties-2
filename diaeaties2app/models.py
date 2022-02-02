@@ -47,7 +47,7 @@ class Comment(models.Model):
 
 
 class Contact(models.Model):
-    contact_email = models.EmailField()
+    email = models.EmailField()
     subject = models.CharField(max_length=100)
     sent = models.DateTimeField(auto_now_add=True)
     message = models.TextField(max_length=500)

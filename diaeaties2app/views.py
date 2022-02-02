@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -83,7 +83,7 @@ def contact(request):
         if contact_form.is_valid():
             contact_form.save()
             messages.success(request, 'Thank you for contacting us!')
-            return redirect('index.html')
+            return redirect('home')
             
     contact_form = ContactForm()
     context = {'contact_form': contact_form}
