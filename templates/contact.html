@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container  container-override">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h3>Contact Us</h3>
+
+            <p>Do you have any questions or queries? Please do not hesitate to contact us
+                directly.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form method="post" style="margin-top: 1.3em;">
+                {{ contact_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-signup right" style="margin-top: 5px;">Submit</button>
+            </form>
+            <!-- <form class="signup" id="signup_form" method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="btn btn-signup right" type="submit">{% trans "Submit Message" %} &raquo;</button>
+            </form> -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

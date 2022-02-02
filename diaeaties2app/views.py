@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
 
 class RecipeList(generic.ListView):
     model = Recipe
@@ -74,4 +74,17 @@ class LovedRecipe(View):
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
+
+"""Display the contact form"""
+def contact(request):
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            messages.success(request, 'Thank you for contacting us!')
+            return redirect('landing_page.html')
+            
+    contact_form = ContactForm()
+    context = {'contact_form': contact_form}
+    return render(request, 'contact.html', context)
 

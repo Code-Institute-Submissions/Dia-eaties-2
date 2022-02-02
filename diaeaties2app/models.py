@@ -44,3 +44,13 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.comment_text} by {self.display_name}"
+
+
+class Contact(models.Model):
+    contact_email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    sent = models.DateTimeField(auto_now_add=True)
+    message = models.TextField(max_length=500)
+
+    def __str__(self):
+        return f'{self.email}'

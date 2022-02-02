@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recipe, Comment
+from .models import Recipe, Comment, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Recipe)
@@ -21,3 +21,14 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = (
+        'contact_email',
+        'subject',
+        'message',
+        'sent',
+    )
+
+    ordering = ('sent',)
