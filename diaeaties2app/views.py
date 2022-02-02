@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
+from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 from .models import Recipe
-from .forms import CommentForm, ContactForm
+from .forms import CommentForm, ContactForm, RecipeForm
 
 class RecipeList(generic.ListView):
     model = Recipe
@@ -89,3 +92,16 @@ def contact(request):
     context = {'contact_form': contact_form}
     return render(request, 'contact.html', context)
 
+
+class CreateRecipe(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = 'create_recipe.html'
+    success_message = "Thank you for submitting your recipe dia-buddy"
+
+    def get_success_url(self):
+        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)

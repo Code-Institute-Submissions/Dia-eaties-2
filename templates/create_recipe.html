@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container  container-override">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h3>Create new recipe</h3>
+
+            <p>Don't use this form on mobile or tablet</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-signup right" style="margin-top: 5px;">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

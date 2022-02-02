@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
@@ -30,6 +31,11 @@ class Recipe(models.Model):
     def number_of_loves(self):
         return self.loves.count()
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.recipe_name)
+        super(Recipe, self).save(*args, **kwargs)
+
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")
@@ -54,3 +60,5 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'{self.email}'
+
+
