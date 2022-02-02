@@ -22,6 +22,7 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
 
+
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = (

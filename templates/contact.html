@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
@@ -22,7 +20,7 @@
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup right" style="margin-top: 5px;">Submit</button>
             </form>
-            <!-- <form class="signup" id="signup_form" method="post" action="{% url 'contact' %}">
+            <form class="signup" id="signup_form" method="post" action="{% url 'contact' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
