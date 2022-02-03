@@ -1,56 +1,45 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #5874ac;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: #353f4b;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+a {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
+.nav-title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #5B89C7;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-image: url("https://res.cloudinary.com/diabekki/image/upload/v1635535942/pexels-nataliya-vaitkevich-6942081_iwuft6.jpg");
+    background-repeat: no-repeat;
 }
 
 .card {
-    border: none;
-    background-color: transparent;
+    border-color: royalblue;
+    border-radius: 5%;
+    background-color:#ffffff;
 }
 
 .image-container {
     position: relative;
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
+.author {
+    color: #353f4b; 
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
-}
-
-.author {
-    color: white;
-    margin: 4px;
     text-transform: uppercase;
 }
+
+
 
 .masthead {
     margin-top: 10px;
@@ -106,19 +95,31 @@ body {
     color: lightgray;
 }
 
+.btn-update{
+    background-color: #5B89C7;
+}
+
+.btn-delete{
+    background-color: tomato;
+}
+
+.btn {
+    color: white;
+}
+
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #5B89C7;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #5B89C7;
 }
 
 .link {
-    color: #23BBBB;
+    color: #5B89C7;
     text-decoration: none;
 }
 
@@ -129,14 +130,22 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: tomato;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: tomato;
     background: transparent;
     border: none;
+}
+
+.footer {
+    background-color: #ffffff;
+}
+
+.footer-text{
+    color: #445261;
 }

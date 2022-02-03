@@ -19,7 +19,7 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.recipe_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div class="author">
                                     <p class="author">Author: {{ recipe.creator }}</p>
                                 </div>
                             </div>
@@ -28,11 +28,15 @@
                                 <p class="card-text">{{ recipe.highlight }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ recipe.created}} <i class="far fa-heart"></i>
+                            <p class="card-text h6" style="color: #5B89C7;">{{ recipe.created}} <i
+                                    class="far fa-heart"></i>
                                 {{ recipe.number_of_loves }}</p>
-                                <a href="{% url 'update' recipe.slug %}" role="button" class="edit-delete edit">Update Recipe <i class="fas fa-edit"></i></a>
-                                <a href="{% url 'delete' recipe.slug %}" role="button" class="text-danger">Delete Recipe <i
-                                    class="fas fa-trash-alt"></i></a>
+                            <button class="btn-update btn">
+                                <a href="{% url 'update' recipe.slug %}" role="button">Update</a>
+                            </button>
+                            <button class="btn-delete btn">
+                                <a href="{% url 'delete' recipe.slug %}" role="button">Delete</a>
+                            </button>
                         </div>
                     </div>
                 </div>

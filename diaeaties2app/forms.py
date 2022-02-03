@@ -22,4 +22,5 @@ class RecipeForm(forms.ModelForm):
         exclude = ('slug', 'updated_on', 'shared_on', 'loves',)
         widgets = {
             'content': SummernoteWidget(),
+            'about': SummernoteWidget()
         }
