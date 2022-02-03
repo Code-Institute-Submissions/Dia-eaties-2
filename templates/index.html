@@ -31,12 +31,12 @@
                             <p class="card-text h6" style="color: #5B89C7;">{{ recipe.created}} <i
                                     class="far fa-heart"></i>
                                 {{ recipe.number_of_loves }}</p>
-                            <button class="btn-update btn">
-                                <a href="{% url 'update' recipe.slug %}" role="button">Update</a>
-                            </button>
-                            <button class="btn-delete btn">
-                                <a href="{% url 'delete' recipe.slug %}" role="button">Delete</a>
-                            </button>
+                            {% if user.is_authenticated and user == recipe.creator %}
+                            <a href="{% url 'update' recipe.slug %}" class="btn-update btn" role="button">Update</a>
+                            <a href="{% url 'delete' recipe.slug %}" class="btn-delete btn" role="button">Delete</a>
+                            {% elif user.is_superuser %}
+                            <a href="{% url 'delete' recipe.slug %}" class="btn-delete btn" role="button">Delete</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

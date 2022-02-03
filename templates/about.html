@@ -8,7 +8,9 @@
         <div class="col-md-8 mt-3 offset-md-2  center-button">
             <span class="nav-title">Dia</span><span>-eaties</span>
             <br>
+            {% if not user.is_authenticated%}
             <a class="btn btn-signup right" href="{% url 'account_signup' %}">Join Us</a>
+            {% endif %}
             <div class="about-container">
                 <div class="about-text">
                     <div>

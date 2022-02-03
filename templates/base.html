@@ -41,7 +41,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-contact" href="{% url 'contact' %}">Contact</a>
+                    </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link nav-contact" href="{% url 'create_recipe' %}">Create Recipe</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
@@ -53,12 +59,6 @@
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link nav-contact" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-contact" href="{% url 'create_recipe' %}">Create Recipe</a>
-                    </li>
                 </ul>
                 <span class="navbar-text">
                     Type 1 of a kind
