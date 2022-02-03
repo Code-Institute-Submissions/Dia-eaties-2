@@ -151,21 +151,15 @@ a {
 }
 .about-container {
     background-color:white;
-    width: 110%;
-    height: 80%;
+    width: auto;
+    height: auto;
     padding: 20px;
     margin-top: 2rem;
-    border-radius: 15px 50px 30px; 
+    border-radius: 15px 50px 30px;
+    margin-bottom: 5%; 
 }
-
-.about-img {
-    width: 50%;
-    float: left;
-    padding: 20px;
-    border: none;
-}  
+ 
 .about-text {
-    width: 50%;
-    float: left;
+    width: auto;
     padding: 20px;
 }  
