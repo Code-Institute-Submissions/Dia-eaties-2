@@ -13,31 +13,28 @@ The blog features a number of interacvitiy for the user, it includes the option 
 - create a recipe for logged in users
 - like recipes
 - leave comments
+- read about page
+- {future-feature} Pop ups for diabetic slang
 
 
 ### User Account
 
 - Login signout and registration 
-![image of name input section](media/login.JPG)
-![image of name input section](media/sign-up.JPG)
-![image of name input section](media/signout-prompt.JPG)
+![image of login](/media/sign-in.JPG)
+![image of signout](media/sign-out.JPG)
+![image of signup](media/sign-up.JPG)
  
 
 ### Comments
 
-- Comments section 
-![image of name input section](media/comments.JPG)
-
-- Comment approval 
-![image of name input section](media/comment-approval.JPG)
-![image of name input section](media/comment-approval-verfied.JPG)
+- Comments section for users to interact
+![image of comments](media/comment.JPG)
 
 
 ### Create Recipe
 
-- Create a recipe for registered users
-![image of name input section](media/create-recipe-prompt.JPG)
-![image of name input section](media/create-recipe-form.JPG)
+- Create a recipe for registered users so users can be part of the webiste experience
+![image of create recipe](media/create-recipe-prompt.JPG)
 
 
 ### Like Function
