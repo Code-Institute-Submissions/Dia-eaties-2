@@ -15,6 +15,7 @@ class Recipe(models.Model):
     )
     recipe_image = CloudinaryField('image', default='placeholder')
     highlight = models.TextField(blank=True)
+    about = models.TextField(blank=True, null=True)
     updated = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
