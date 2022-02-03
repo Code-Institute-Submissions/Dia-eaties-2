@@ -104,6 +104,7 @@ class CreateRecipe(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return reverse('recipe_detail', kwargs={'slug': self.object.slug})
 
     def form_valid(self, form):
+        form.instance.creator = self.request.user
         print(form.cleaned_data)
         return super().form_valid(form)
 

@@ -24,7 +24,7 @@ a {
 
 .card {
     border-color: royalblue;
-    border-radius: 5%;
+    border-radius: 15px 50px 30px;
     background-color:#ffffff;
 }
 
