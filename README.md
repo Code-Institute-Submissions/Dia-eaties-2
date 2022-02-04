@@ -6,7 +6,7 @@ This project is a recipe blog dedicated to low carb and low sugar meals for diab
 I followed the recipe blog for the project development.
 
 ## Features
-The blog features a number of interacvitiy for the user, it includes the option to
+The recipe site features a number of recipes dedicated to low carb and carb free options for diabetics. Below is a list of features the website has to offer: 
 - register
 - login
 - logout
@@ -15,7 +15,6 @@ The blog features a number of interacvitiy for the user, it includes the option 
 - leave comments
 - read about page
 - Profile page
-- {future-feature} Pop ups for diabetic slang
 
 
 ### User Account
@@ -34,7 +33,7 @@ The blog features a number of interacvitiy for the user, it includes the option 
 
 ### Create Recipe
 
-- Create a recipe for registered users so users can be part of the webiste experience
+- Create a recipe for registered users so that users can be part of the webiste experience
 ![image of create recipe](media/create-recipe.JPG)
 
 
@@ -65,7 +64,8 @@ Navbar for user to navigate website
 ![image of profile](media/profile.JPG)
 
 ### Update/Delete
-- Logged in user can delete or update their recipe 
+- Logged in user can delete or update their recipe
+- Admin can not edit recipes as I felt it wasn't necessary to add as they can edit from the admin page itself 
 ![image of update and delete](media/update.delete.JPG)
 
  **Features left to add**
@@ -74,15 +74,14 @@ Navbar for user to navigate website
 - I would like to add more resources to organisations that deal with diabetic diets
 - Add a more colouful or tasteful section for the ingredients and instructions part of the recipes
 - Have pop ups to explain diabetic wording and slang
-- There are many things I would like to add in terms of functionality and the overall look
 
 ## Program Structure
 
 - This is the original Wireframe for the Dia-Eaties recipe blog
 
 ![image of the text flow chart for the project](media/Wireframe.png)
-me
-- The final result has not changed much lading to the final project 
+
+- The final result has not changed much leading to the final project 
 - The number of recipes has been decreased to two compared to the orginal four 
 
 
@@ -108,10 +107,12 @@ me
 - I used PEP8 to validate my python code, the only errors remaining are a couple of line too long errors 
 
 - I used https://validator.w3.org/ to validate html
-![image of validator](media/error-free-css.JPG)
+![image of validator](media/html-error.JPG)
+
 
 - I used https://jigsaw.w3.org/css-validator/ to validate CSS
 ![image of validator](media/error-free-css.JPG)
+
 
 - I used https://jshint.com/ to validate Javascript
 ![image of validator](media/js-works.JPG)
@@ -144,8 +145,22 @@ resources making sure to add postgres url to config vars
    - https://8000-diabekki-diaeaties2-a2zlno4cqy0.ws-eu30.gitpod.io/
    - https://dia-eaties-2.herokuapp.com/
 
-   Link to User-Stories project section
-   - https://github.com/Diabekki/Dia-eaties-2/projects/1
+
+- Agile is a handy development tool to create and plan a project that involves such planning of a website that can bring value to people.
+I have stated the process and thinking of using agile to start making a project.
+
+  - Planning project throughly 
+  - Deciding the app name
+  - What the main purpose of the website is 
+  - How it can be of value to users
+
+Link to User-Stories project section
+  - https://github.com/Diabekki/Dia-eaties-2/projects/1
+
+  - I created a user-story board on GitHub which helped plan a to-do list to  make sure I tackled all features I wanted to add to the website.
+  - After making my issues I put them into in progress and finally they were moved into the done section after they had been implemented into the project
+
+
 
 
 
