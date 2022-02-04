@@ -92,24 +92,30 @@ me
 
  - I tested the admin approval for comments and recipes
  - I tested the sign in, register and signout process for the user and admin
- - Tested the basic functionality of the page. e.g the responsiveness 
+ - I tested the basic functionality of the page. e.g the responsiveness 
  - I tested the process to allow a registered user to create a recipe and post it to the homepage
  - I tested comment approval within the admin section
+ - I tested the profile page
+ - I had users to test the website (make their own profile, recipe etc)
 
 ### Errors
 
   - The main error I faced was missing module docsctring and class docstring
   - Another error was the line is too long error which again I could not use line break as it distrupted the code 
-  - The errors in the code have not affected functinality
 
 
 ### Validator Testing 
 
 - I used PEP8 to validate my python code
+
 - I used https://validator.w3.org/ to validate html
+![image of validator](media/error-free-css.JPG)
+
 - I used https://jigsaw.w3.org/css-validator/ to validate CSS
+![image of validator](media/error-free-css.JPG)
+
 - I used https://jshint.com/ to validate Javascript
-   
+![image of validator](media/js-works.JPG)
 
 ## Deployment 
 

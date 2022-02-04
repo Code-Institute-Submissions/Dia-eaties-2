@@ -31,14 +31,14 @@ a {
 
 .image-container {
     position: relative;
-    max-height: 30vh;
+    height: 40vh;
 }
-/* 
-.image-container>img{
+
+/* .image-container img{
     height: 100%;
 } */
 
-.img.card-img-top{
+.card-img-top{
     height: 100%;
 }
 
