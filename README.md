@@ -14,6 +14,7 @@ The blog features a number of interacvitiy for the user, it includes the option 
 - like recipes
 - leave comments
 - read about page
+- Profile page
 - {future-feature} Pop ups for diabetic slang
 
 
