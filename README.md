@@ -1,5 +1,5 @@
 
-![image of name input section](media/am-i-responsive.JPG)
+![image of am I responsive](media/AmIResponsive.JPG)
 
 # Dia-Eaties Recipe blog
 This project is a recipe blog dedicated to low carb and low sugar meals for diabetics, its very difficult to find suitable recipes for diet requirements in the vast sea of recipes online so I felt this site would be nice to have to have everything compiled into a singular space.
