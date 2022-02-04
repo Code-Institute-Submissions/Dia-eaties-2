@@ -2,11 +2,6 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-<a href="{% url 'create' %}" role="button" class="btn btn-outline-warning create-button">
-    Create a recipe</a>
-{% endif %}
-
 <h1>PROFILE</h1>
 <br>
 
@@ -57,7 +52,6 @@
                 {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
-                {% endif %}
                 {% endif %}
                 {% empty %}
                     <p class="empty-text">You have no recipes published </p>

@@ -19,14 +19,14 @@ class RecipeList(generic.ListView):
 
 class RecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
-        queryset = Recipe.objects.filter(status=1)
+        queryset = Recipe.objects
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created')
         loved = False
         if recipe.loves.filter(id=self.request.user.id).exists():
             loved = True
     
-        return render (
+        return render(
             request,
             "recipe_detail.html",
             {
@@ -34,10 +34,9 @@ class RecipeDetail(View):
                 "comments": comments,
                 "commented": False,
                 "loved": loved,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
             },
         )
-
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
@@ -119,8 +118,9 @@ class UpdateRecipe(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     def get_success_url(self):
         return reverse('recipe_detail', kwargs={'slug': self.object.slug})
 
-"""Delete a blog post"""
+
 class DeleteRecipe(LoginRequiredMixin, DeleteView):
+    """Delete a blog post"""
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy("home")
