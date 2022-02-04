@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Recipe, Comment, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
 
@@ -14,7 +15,8 @@ class RecipeAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('display_name', 'comment_text', 'recipe', 'created', 'approved')
+    list_display = ('display_name', 'comment_text', 'recipe',
+                    'created', 'approved')
     search_fields = ('display_name', 'email', 'comment_text')
     list_filter = ('approved', 'created')
     actions = ['approve_comments']

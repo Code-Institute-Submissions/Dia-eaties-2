@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from .models import Recipe
 from .forms import CommentForm, ContactForm, RecipeForm
 
+
 class RecipeList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created')
@@ -25,7 +26,7 @@ class RecipeDetail(View):
         loved = False
         if recipe.loves.filter(id=self.request.user.id).exists():
             loved = True
-    
+
         return render(
             request,
             "recipe_detail.html",
@@ -55,8 +56,8 @@ class RecipeDetail(View):
             comment.save()
         else:
             comment_form = CommentForm()
-        
-        return render (
+
+        return render(
             request,
             "recipe_detail.html",
             {
@@ -81,6 +82,8 @@ class LovedRecipe(View):
 
 
 """Displays the contact form"""
+
+
 def contact(request):
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
@@ -88,7 +91,7 @@ def contact(request):
             contact_form.save()
             messages.success(request, 'Thank you for contacting us!')
             return redirect('home')
-            
+
     contact_form = ContactForm()
     context = {'contact_form': contact_form}
     return render(request, 'contact.html', context)
@@ -120,7 +123,7 @@ class UpdateRecipe(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 
 class DeleteRecipe(LoginRequiredMixin, DeleteView):
-    """Delete a blog post"""
+    """Delete a recipe"""
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy("home")
@@ -131,9 +134,6 @@ class Profile(View):
     Display recipes created by user as draft and published,
     and the ones they have hit the love button for
     """
-    # code credit
-    # https://stackoverflow.com/questions/12615154/how-to-get-the-currently
-    # -logged-in-users-user-id-in-django
 
     def get(self, request, *args, **kwargs):
         published = Recipe.objects.filter(status=1, creator=request.user)

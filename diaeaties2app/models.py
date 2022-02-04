@@ -39,7 +39,8 @@ class Recipe(models.Model):
 
 
 class Comment(models.Model):
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
+                               related_name="comments")
     display_name = models.CharField(max_length=125)
     email = models.EmailField()
     comment_text = models.TextField()
@@ -61,5 +62,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'{self.email}'
-
-
