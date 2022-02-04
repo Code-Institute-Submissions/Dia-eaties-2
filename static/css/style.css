@@ -26,10 +26,15 @@ a {
     border-color: royalblue;
     border-radius: 15px 50px 30px;
     background-color:#ffffff;
+    height: 80vh;
 }
 
 .image-container {
     position: relative;
+}
+
+.card-image-top{
+    height: 50%;
 }
 
 .author {

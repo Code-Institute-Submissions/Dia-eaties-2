@@ -36,12 +36,14 @@ The blog features a number of interacvitiy for the user, it includes the option 
 - Create a recipe for registered users so users can be part of the webiste experience
 ![image of create recipe](media/create-recipe.JPG)
 
+### Test recipe
+
+
 
 ### Like Function
 
 - Like function for recipes 
 ![image of likes](media/like.JPG)
-
 
 ### Contact us 
 
@@ -53,34 +55,37 @@ Navbar for user to navigate website
 ![image of nav ](media/nav.JPG)
 
 ### Footer 
-The the website footer with link to personal github
+- The the website footer with link to personal github
 ![image of footer](media/footer.JPG)
 
 ### About us
-This page gives the user information on what the page is about
+- This page gives the user information on what the page is about
 ![image of about page](media/about-us.JPG)
 
+### Profile
+- This is a profile section whihc has three sections, the published recipes that are visable on the homepage, the draft which is only visable on their profile page and recipes they loved will also display so they can keep track 
+![image of profile](media/profile.JPG)
+
 ### Update/Delete
-Logged in user can delete or update their recipe 
+- Logged in user can delete or update their recipe 
 ![image of update and delete](media/update.delete.JPG)
 
  **Features left to add**
 
 - I would like add more sections to split up the recipes e.g breakfast section, dinner section etc
-- Add more interactivity for the users like a live comment feed 
+- I would like to add more resources to organisations that deal with diabetic diets
 - Add a more colouful or tasteful section for the ingredients and instructions part of the recipes
-- Give the user an option to delete their recipes
+- Have pop ups to explain diabetic wording and slang
 - There are many things I would like to add in terms of functionality and the overall look
 
 ## Program Structure
 
 - This is the original Wireframe for the Dia-Eaties recipe blog
 
-![image of the text flow chart for the project](media/dia-eaties-wireframe.JPG)
-
+![image of the text flow chart for the project](media/Wireframe.png)
+me
 - The final result has not changed much lading to the final project 
-- The number of recipes has been decreased to three compared to the orginal four 
-- and the registered user can now create their own posts instead of leaving a suggestion 
+- The number of recipes has been decreased to two compared to the orginal four 
 
 
 ## Testing
