@@ -6,7 +6,7 @@
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="col-12 mt-3">
             <div class="row">
                 {% for recipe in recipe_list %}
                 {% if recipe.status == 1 %}
@@ -20,9 +20,9 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.recipe_image.url }}" alt="user uploaded image">
                                 {% endif %}
-                                <div class="author">
-                                    <p class="author">Author: {{ recipe.creator }}</p>
-                                </div>
+                            </div>
+                            <div class="author">
+                                <p class="author">Author: {{ recipe.creator }}</p>
                             </div>
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="post-link">
                                 <h2 class="card-title">{{ recipe.recipe_name }}</h2>

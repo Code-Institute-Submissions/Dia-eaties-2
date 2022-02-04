@@ -63,7 +63,7 @@ Navbar for user to navigate website
 ![image of about page](media/about-us.JPG)
 
 ### Profile
-- This is a profile section whihc has three sections, the published recipes that are visable on the homepage, the draft which is only visable on their profile page and recipes they loved will also display so they can keep track 
+- This is a profile section which has three sections, the published recipes that are visible on the homepage, the draft which is only visible on their profile page and recipes they loved will also display so they can keep track 
 ![image of profile](media/profile.JPG)
 
 ### Update/Delete
@@ -90,23 +90,23 @@ me
 
 ## Testing
 
- - I tested the admin approval for comments and recipes
- - I tested the sign in, register and signout process for the user and admin
- - I tested the basic functionality of the page. e.g the responsiveness 
- - I tested the process to allow a registered user to create a recipe and post it to the homepage
- - I tested comment approval within the admin section
- - I tested the profile page
- - I had users to test the website (make their own profile, recipe etc)
+ - I tested the admin approval for comments and recipes, all features work as expected
+ - I tested the sign in, register and signout process for the user and admin, all features work as expected
+ - I tested the basic functionality of the page. e.g the responsiveness, all features work as expected
+ - I tested the process to allow a registered user to create a recipe and post it to the homepage, all features work as expected
+ - I tested comment approval within the admin section, all features work as expected
+ - I tested the profile page, all features work as expected
+ - I had users to test the website (make their own profile, recipe etc), all features work as expected
 
 ### Errors
 
-  - The main error I faced was missing module docsctring and class docstring
-  - Another error was the line is too long error which again I could not use line break as it distrupted the code 
+  - The main error I faced was missing module docsctring and class docstring - these weren't picked up by the PEP8 validator so it is considered clean code. However I'd like to address this in the future when I have time.
+  - Another error was the line is too long error which again I could not fix in all cases as it distrupted the code 
 
 
 ### Validator Testing 
 
-- I used PEP8 to validate my python code
+- I used PEP8 to validate my python code, the only errors remaining are a couple of line too long errors 
 
 - I used https://validator.w3.org/ to validate html
 ![image of validator](media/error-free-css.JPG)
@@ -119,20 +119,31 @@ me
 
 ## Deployment 
 
-- The game was deployed through Heroku 
-  - I went on to the Heroku website 
-  - Clicked on "Create-New-App"
-  - Named my project and stated what region I live in
-  - I clicked into settings 
-  - Clicked into Deploy 
-  - Connected to my GitHub
-  - Searched for my project name repository and clicked connect
-  - Enabled automatic deploys
-  - Clicked "Deploy Branch" 
+This project was deployed through Heroku in the following steps:
+
+- A repository was created in github using the student template
+- The repo was pushed to the cloud based IDE called GITPOD
+- In the GITPOD terminal, django and its supporting libraries were installed using pip3
+- The project is then created using using python3 manage.py startproject projectname
+- The first app is then created using python3 manage.py createapp appname
+- The app is then registered in the setting file in the project level settings.py.
+- An app is the created in heroku and the installation of postgres is done under
+resources making sure to add postgres url to config vars
+- Back in the GITPOD terminal, install Django Database and psycopg2
+- Import dj database url in your settings file and replace default database with dj database passing it postgres url
+- Migrate database and load data in gitpod terminal
+- Create another super user
+- Create an if else statement that checks the database url and runs the correct database accordingly.
+- Install gunicorn, create a procfile and log into heroku in the terminal.
+- Disable the static files using heroku config:set, DISABLE_COLLECTSTATIC=1 --app appname
+- Add heroku app and localhost to allowed hosts in settings.py
+- Generate a secret key using Django secret key generator and add to config vars whilst linking it to settings.py
+- Add, commit and push changes to Github
+- Set heroku to automatically deploy but setting it to Github and searching/connecting to correct repo.
 
   The live links to my project are - 
-   - https://8000-beige-grasshopper-kkfhy7ez.ws-eu17.gitpod.io/
-   - https://diaeatiesblog.herokuapp.com/
+   - https://8000-diabekki-diaeaties2-a2zlno4cqy0.ws-eu30.gitpod.io/
+   - https://dia-eaties-2.herokuapp.com/
 
 
 
