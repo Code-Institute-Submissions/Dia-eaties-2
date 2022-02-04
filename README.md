@@ -36,9 +36,6 @@ The blog features a number of interacvitiy for the user, it includes the option 
 - Create a recipe for registered users so users can be part of the webiste experience
 ![image of create recipe](media/create-recipe.JPG)
 
-### Test recipe
-
-
 
 ### Like Function
 
@@ -145,6 +142,9 @@ resources making sure to add postgres url to config vars
   The live links to my project are - 
    - https://8000-diabekki-diaeaties2-a2zlno4cqy0.ws-eu30.gitpod.io/
    - https://dia-eaties-2.herokuapp.com/
+
+   Link to User-Stories
+   - https://github.com/Diabekki/Dia-eaties-2/projects/1
 
 
 
