@@ -97,6 +97,7 @@ me
  - I tested comment approval within the admin section, all features work as expected
  - I tested the profile page, all features work as expected
  - I had users to test the website (make their own profile, recipe etc), all features work as expected
+ - I tested the app in my mobile, desktop and devtools, everything appeared to look up to standard on devtools
 
 ### Errors
 
