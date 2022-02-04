@@ -9,6 +9,7 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for recipe in recipe_list %}
+                {% if recipe.status == 1 %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -43,6 +44,7 @@
                 {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
+                {% endif %}
                 {% endif %}
                 {% endfor %}
 
