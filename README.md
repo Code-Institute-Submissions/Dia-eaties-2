@@ -143,7 +143,7 @@ resources making sure to add postgres url to config vars
    - https://8000-diabekki-diaeaties2-a2zlno4cqy0.ws-eu30.gitpod.io/
    - https://dia-eaties-2.herokuapp.com/
 
-   Link to User-Stories
+   Link to User-Stories project section
    - https://github.com/Diabekki/Dia-eaties-2/projects/1
 
 
