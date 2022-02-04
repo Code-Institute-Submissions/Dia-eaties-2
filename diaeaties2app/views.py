@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.contrib.auth.models import User
 from .models import Recipe
 from .forms import CommentForm, ContactForm, RecipeForm
 
@@ -123,3 +124,29 @@ class DeleteRecipe(LoginRequiredMixin, DeleteView):
     model = Recipe
     template_name = 'delete_recipe.html'
     success_url = reverse_lazy("home")
+
+
+class Profile(View):
+    """
+    Display recipes created by user as draft and published,
+    and the ones they have hit the love button for
+    """
+    # code credit
+    # https://stackoverflow.com/questions/12615154/how-to-get-the-currently
+    # -logged-in-users-user-id-in-django
+
+    def get(self, request, *args, **kwargs):
+        published = Recipe.objects.filter(status=1, creator=request.user)
+        drafts = Recipe.objects.filter(status=0, creator=request.user)
+        this_user = request.user
+        loves = User.objects.get(pk=this_user.id).main_loves.all()
+
+        return render(
+            request,
+            'profile.html',
+            {
+                'published': published,
+                'drafts': drafts,
+                'loves': loves,
+            },
+        )

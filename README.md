@@ -34,29 +34,35 @@ The blog features a number of interacvitiy for the user, it includes the option 
 ### Create Recipe
 
 - Create a recipe for registered users so users can be part of the webiste experience
-![image of create recipe](media/create-recipe-prompt.JPG)
+![image of create recipe](media/create-recipe.JPG)
 
 
 ### Like Function
 
 - Like function for recipes 
-![image of name input section](media/like-function.JPG)
-![image of name input section](media/like-function-liked.JPG)
-
-### Created Recipe
-
-- Created recipes are posted to homepage
-![image of name input section](media/recipe-section.JPG)
-![image of name input section](media/ingredients-instructions.JPG)
+![image of likes](media/like.JPG)
 
 
-### Admin Section
-- Admin section
-![image of name input section](media/admin-section.JPG)
+### Contact us 
 
-- Comment approval verfied 
-![image of name input section](media/comment-approval-verfied.JPG)
+- Contact page for users to get in touch with us 
+![image of contact page](media/contact-us.JPG)
 
+### Navbar
+Navbar for user to navigate website
+![image of nav ](media/nav.JPG)
+
+### Footer 
+The the website footer with link to personal github
+![image of footer](media/footer.JPG)
+
+### About us
+This page gives the user information on what the page is about
+![image of about page](media/about-us.JPG)
+
+### Update/Delete
+Logged in user can delete or update their recipe 
+![image of update and delete](media/update.delete.JPG)
 
  **Features left to add**
 

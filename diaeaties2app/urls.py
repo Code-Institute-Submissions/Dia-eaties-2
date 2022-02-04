@@ -4,6 +4,7 @@ from django.urls import path
 urlpatterns = [
     path('', views.RecipeList.as_view(), name='home'),
     path('contact/', views.contact, name='contact'),
+    path('my_profile/', views.Profile.as_view(), name='profile'),
     path('create-recipe/', views.CreateRecipe.as_view(), name='create_recipe'),
     path('<slug:slug>/delete/', views.DeleteRecipe.as_view(), name='delete'),
     path('<slug:slug>/update/', views.UpdateRecipe.as_view(), name='update'),

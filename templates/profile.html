@@ -20,8 +20,7 @@
         <div class="col-12 mt-3 left">
             <div class="row">
 
-                {% for recipe in recipe_list %}
-                {% if recipe.status == 1 %}
+                {% for recipe in published %}
 
                 <div class="col-md-4">
                     <div class="card mb-4">
@@ -81,48 +80,40 @@
         <div class="col-12 mt-3 left">
             <div class="row">
 
-                {% for recipe in draft %}
+                {% for recipe in drafts %}
 
-                <div class="col-md-3">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-
-                            <!-- FRONT OF CARD -->
-                            <div class="flip-card-front">
-                                <div class="image-container">
-                                    {% if "placeholder" in recipe.featured_image.url %}
-                                    <img alt="lord of the recipe logo" class="card-img-top"
-                                        src="https://res.cloudinary.com/hartnetl/image/upload/v1634056214/temp-logo_lkdghp.png">
-                                    {% else %}
-                                    <img alt="user uploaded image" class="card-img-top" src=" {{ recipe.featured_image.url }}">
-                                    {% endif %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in recipe.recipe_image.url %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/diabekki/image/upload/v1635610273/pexels-pavel-danilyuk-7653347_1_dzj4ii.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ recipe.recipe_image.url }}">
+                                {% endif %}
+                                <div class="author">
+                                    <p class="author">Author: {{ recipe.creator }}</p>
                                 </div>
-                                <h2 class="card-title">{{ recipe.title }}</h2>
-                                <p class="recipe-card-text d-none d-lg-block">Category: {{ recipe.category }} <br>
-                                        Tags:
-                                        {% for tag in recipe.tags.all %}
-                                        {{ tag.name }}
-                                        {% endfor %}
-                                </p>
-                                <a href="{% url 'full_recipe' recipe.slug %}" role="button"
-                                    class="recipe-link btn btn-warning btn-sm d-lg-none">Go to recipe</a>
                             </div>
-
-                            <!-- BACK OF CARD-->
-                            <div class="flip-card-back scroll-text">
-
-                                <p class="recipe-card-text recipe-card-link">Author: {{ recipe.creator }} <br>
-                                    {{ recipe.date_created }} </p>
-                                <a href="{% url 'full_recipe' recipe.slug %}" role="button"
-                                    class="recipe-link btn btn-warning btn-sm">Go to recipe</a>
-                                <hr>
-                                <p class="recipe-card-text">{{ recipe.about | safe }}
-                            </div>
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="post-link">
+                                <h2 class="card-title">{{ recipe.recipe_name }}</h2>
+                                <p class="card-text">{{ recipe.highlight }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text h6" style="color: #5B89C7;">{{ recipe.created}} <i
+                                    class="far fa-heart"></i>
+                                {{ recipe.number_of_loves }}</p>
+                            {% if user.is_authenticated and user == recipe.creator %}
+                            <a href="{% url 'update' recipe.slug %}" class="btn-update btn" role="button">Update</a>
+                            <a href="{% url 'delete' recipe.slug %}" class="btn-delete btn" role="button">Delete</a>
+                            {% elif user.is_superuser %}
+                            <a href="{% url 'delete' recipe.slug %}" class="btn-delete btn" role="button">Delete</a>
+                            {% endif %}
                         </div>
                     </div>
-                    <br>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
                 {% endif %}
@@ -137,7 +128,7 @@
 <br>
 
 <div class="container">
-    <h2 class="fs-3">Saved Recipes</h2>
+    <h2 class="fs-3">Recipes that I love</h2>
     <div class="row">
 
         <!-- flip cards -->
@@ -145,48 +136,40 @@
         <div class="col-12 mt-3 left">
             <div class="row">
 
-                {% for recipe in saved %}
+                {% for recipe in loves %}
 
-                <div class="col-md-3">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-
-                            <!-- FRONT OF CARD -->
-                            <div class="flip-card-front">
-                                <div class="image-container">
-                                    {% if "placeholder" in recipe.featured_image.url %}
-                                    <img alt="lord of the recipes logo" class="card-img-top"
-                                        src="https://res.cloudinary.com/hartnetl/image/upload/v1634056214/temp-logo_lkdghp.png">
-                                    {% else %}
-                                    <img alt="user uploaded image" class="card-img-top" src=" {{ recipe.featured_image.url }}">
-                                    {% endif %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in recipe.recipe_image.url %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/diabekki/image/upload/v1635610273/pexels-pavel-danilyuk-7653347_1_dzj4ii.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ recipe.recipe_image.url }}">
+                                {% endif %}
+                                <div class="author">
+                                    <p class="author">Author: {{ recipe.creator }}</p>
                                 </div>
-                                <h2 class="card-title">{{ recipe.title }}</h2>
-                                <p class="recipe-card-text d-none d-lg-block">Category: {{ recipe.category }} <br>
-                                        Tags:
-                                        {% for tag in recipe.tags.all %}
-                                        {{ tag.name }}
-                                        {% endfor %}
-                                </p>
-                                <a href="{% url 'full_recipe' recipe.slug %}" role="button"
-                                    class="recipe-link btn btn-warning btn-sm d-lg-none">Go to recipe</a>
                             </div>
-
-                            <!-- BACK OF CARD-->
-                            <div class="flip-card-back scroll-text">
-
-                                <p class="recipe-card-text recipe-card-link">Author: {{ recipe.creator }} <br>
-                                    {{ recipe.date_created }} </p>
-                                <a href="{% url 'full_recipe' recipe.slug %}" role="button"
-                                    class="recipe-link btn btn-warning btn-sm">Go to recipe</a>
-                                <hr>
-                                <p class="recipe-card-text">{{ recipe.about | safe }}
-                            </div>
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="post-link">
+                                <h2 class="card-title">{{ recipe.recipe_name }}</h2>
+                                <p class="card-text">{{ recipe.highlight }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text h6" style="color: #5B89C7;">{{ recipe.created}} <i
+                                    class="far fa-heart"></i>
+                                {{ recipe.number_of_loves }}</p>
+                            {% if user.is_authenticated and user == recipe.creator %}
+                            <a href="{% url 'update' recipe.slug %}" class="btn-update btn" role="button">Update</a>
+                            <a href="{% url 'delete' recipe.slug %}" class="btn-delete btn" role="button">Delete</a>
+                            {% elif user.is_superuser %}
+                            <a href="{% url 'delete' recipe.slug %}" class="btn-delete btn" role="button">Delete</a>
+                            {% endif %}
                         </div>
                     </div>
-                    <br>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
                 {% endif %}
